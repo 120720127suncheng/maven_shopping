@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="maven_shopping:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="maven_shop_ssm.war">
+      <element id="artifact" artifact-name="maven_shopping:war exploded" />
+    </root>
+  </artifact>
+</component>

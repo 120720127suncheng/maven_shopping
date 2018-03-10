@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iotek.dao.OrderItemMapper">
+    <resultMap id="orderItemMap" type="OrderItem">
+        <id column="id" property="id"></id>
+        <result column="order_list_id" property="orderListId"></result>
+        <result column="product_id" property="productId"></result>
+        <result column="product_number" property="productNumber"></result>
+        <result column="item_create_time" property="itemCreateTime"></result>
+        <result column="item_modified_time" property="itemModifiedTime"></result>
+    </resultMap>
+    <select id="findOrderItemByOrderListId" parameterType="OrderList" resultMap="orderItemMap">
+        SELECT * FROM SCBIOSUN.ORDER_ITEM WHERE ORDER_LIST_ID=#{id}
+    </select>
+</mapper>

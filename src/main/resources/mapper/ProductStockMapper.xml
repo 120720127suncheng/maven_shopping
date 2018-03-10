@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iotek.dao.ProductStockMapper">
+    <resultMap id="productStockMap" type="ProductStock">
+        <id column="ps_id" property="id"></id>
+        <result column="product_id" property="productId"></result>
+        <result column="stock_number" property="stockNumber"></result>
+        <result column="stock_create_time" property="stockCreateTime"></result>
+        <result column="stock_modified_time" property="stockModifiedTime"></result>
+    </resultMap>
+    <select id="queryProductStockByPId" parameterType="ProductStock" resultMap="productStockMap">
+        SELECT * FROM PRODUCT_STOCK WHERE PRODUCT_ID=#{productId}
+    </select>
+</mapper>
