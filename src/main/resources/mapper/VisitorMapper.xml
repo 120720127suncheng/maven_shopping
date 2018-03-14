@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iotek.dao.VisitorMapper">
+    <resultMap id="visitorMap" type="Visitor">
+        <id column="id" property="id"></id>
+        <result column="visitor_password" property="visitorPassword"></result>
+        <result column="visitor_phone" property="visitorPhone"></result>
+        <result column="visitor_email" property="visitorEmail"></result>
+        <result column="visitor_login_time" property="visitorLoginTime"></result>
+        <result column="visitor_create_time" property="visitorCreateTime"></result>
+        <result column="visitor_modified_time" property="visitorModifiedTime"></result>
+        <result column="visitor_is_on" property="visitorIsOn"></result>
+        <result column="visitor_is_normal" property="visitorIsNormal"></result>
+    </resultMap>
+    <sql id="createId">
+        SELECT VIS_ID.nextval FROM dual
+    </sql>
+    <sql id="findVisitor">
+        SELECT * FROM VISITOR
+    </sql>
+    <insert id="addVisitor" parameterType="Visitor">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            <include refid="createId"></include>
+        </selectKey>
+        INSERT INTO VISITOR
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">
+                id,
+            </if>
+            <if test="visitorPassword!=null">
+                visitor_password,
+            </if>
+            <if test="visitorPhone!=null">
+                visitor_phone,
+            </if>
+            <if test="visitorEmail!=null">
+                visitor_email,
+            </if>
+            <if test="visitorLoginTime!=null">
+                visitor_login_time,
+            </if>
+            <if test="visitorCreateTime!=null">
+                visitor_create_time,
+            </if>
+            <if test="visitorModifiedTime!=null">
+                visitor_modified_time,
+            </if>
+            <if test="visitorIsOn!=null">
+                visitor_is_on,
+            </if>
+            <if test="visitorIsNormal!=null">
+                visitor_is_normal,
+            </if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">
+                #{id},
+            </if>
+            <if test="visitorPassword!=null">
+                #{visitorPassword},
+            </if>
+            <if test="visitorPhone!=null">
+                #{visitorPhone},
+            </if>
+            <if test="visitorEmail!=null">
+                #{visitorEmail},
+            </if>
+            <if test="visitorLoginTime!=null">
+                #{visitorLoginTime},
+            </if>
+            <if test="visitorCreateTime!=null">
+                #{visitorCreateTime},
+            </if>
+            <if test="visitorModifiedTime!=null">
+                #{visitorModifiedTime},
+            </if>
+            <if test="visitorIsOn!=null">
+                #{visitorIsOn},
+            </if>
+            <if test="visitorIsNormal!=null">
+                #{visitorIsNormal},
+            </if>
+        </trim>
+    </insert>
+    <select id="findVisitorByPassword" parameterType="Visitor" resultType="visitorMap">
+        <include refid="findVisitor"></include>
+        <where>
+            visitor_password=#{visitorPassword}
+            <choose>
+                <when test="visitorPhone !=null">
+                    AND visitor_phone=#{visitorPhone}
+                </when>
+                <otherwise>
+                    AND visitor_email=#{visitorEmail}
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+</mapper>

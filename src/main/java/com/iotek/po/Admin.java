@@ -3,76 +3,95 @@ package com.iotek.po;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-/**
- * Created by xiaohuang on 2018/1/17.
- */
-public class Admin implements Serializable{
-    public   static   final   int  ADMIN_IS_NORMAL=1;
-    public   static   final   int  ADMIN_IS_NOT_NORMAL=0;
-    private Integer id;
-    private String adminName;
-    private String adminPassword;
-    private Integer  adminIsNormal;
-    private Timestamp  adminCreateTime;
-    private Timestamp adminModifiedTime;
+public class Admin implements Serializable {
 
-    public String getAdminPassword() {
-        return adminPassword;
-    }
+	private Integer id;
+	private String adminName;
+	private transient String adminPassword;
+	private Integer adminIsDeleted;
+	private Timestamp adminLoginTime;
+	private Timestamp adminCreateTime;
+	private Timestamp adminModifiedTime;
+	private Timestamp adminIsLogin;//管理员是否登录 默认值0，未登录
+	public Admin() {
 
-    public void setAdminPassword(String adminPassword) {
-        this.adminPassword = adminPassword;
-    }
+	}
 
-    public Integer getId() {
-        return id;
-    }
+	public Timestamp getAdminIsLogin() {
+		return adminIsLogin;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public void setAdminIsLogin(Timestamp adminIsLogin) {
+		this.adminIsLogin = adminIsLogin;
+	}
 
-    public String getAdminName() {
-        return adminName;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public void setAdminName(String adminName) {
-        this.adminName = adminName;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public Integer getAdminIsNormal() {
-        return adminIsNormal;
-    }
+	public String getAdminName() {
+		return adminName;
+	}
 
-    public void setAdminIsNormal(Integer adminIsNormal) {
-        this.adminIsNormal = adminIsNormal;
-    }
+	public void setAdminName(String adminName) {
+		this.adminName = adminName;
+	}
 
-    public Timestamp getAdminCreateTime() {
-        return adminCreateTime;
-    }
+	public String getAdminPassword() {
+		return adminPassword;
+	}
 
-    public void setAdminCreateTime(Timestamp adminCreateTime) {
-        this.adminCreateTime = adminCreateTime;
-    }
+	public void setAdminPassword(String adminPassword) {
+		this.adminPassword = adminPassword;
+	}
 
-    public Timestamp getAdminModifiedTime() {
-        return adminModifiedTime;
-    }
+	public Integer getAdminIsDeleted() {
+		return adminIsDeleted;
+	}
 
-    public void setAdminModifiedTime(Timestamp adminModifiedTime) {
-        this.adminModifiedTime = adminModifiedTime;
-    }
+	public void setAdminIsDeleted(Integer adminIsDeleted) {
+		this.adminIsDeleted = adminIsDeleted;
+	}
 
-    @Override
-    public String toString() {
-        return "Admin{" +
-                "id=" + id +
-                ", adminName='" + adminName + '\'' +
-                ", adminPassword='" + adminPassword + '\'' +
-                ", adminIsNormal=" + adminIsNormal +
-                ", adminCreateTime=" + adminCreateTime +
-                ", adminModifiedTime=" + adminModifiedTime +
-                '}';
-    }
+	public Timestamp getAdminLoginTime() {
+		return adminLoginTime;
+	}
+
+	public void setAdminLoginTime(Timestamp adminLoginTime) {
+		this.adminLoginTime = adminLoginTime;
+	}
+
+	public Timestamp getAdminCreateTime() {
+		return adminCreateTime;
+	}
+
+	public void setAdminCreateTime(Timestamp adminCreateTime) {
+		this.adminCreateTime = adminCreateTime;
+	}
+
+	public Timestamp getAdminModifiedTime() {
+		return adminModifiedTime;
+	}
+
+	public void setAdminModifiedTime(Timestamp adminModifiedTime) {
+		this.adminModifiedTime = adminModifiedTime;
+	}
+
+	@Override
+	public String toString() {
+		return "Admin{" +
+				"id=" + id +
+				", adminName='" + adminName + '\'' +
+				", adminPassword='" + adminPassword + '\'' +
+				", adminIsDeleted=" + adminIsDeleted +
+				", adminLoginTime=" + adminLoginTime +
+				", adminCreateTime=" + adminCreateTime +
+				", adminModifiedTime=" + adminModifiedTime +
+				", adminIsLogin=" + adminIsLogin +
+				'}';
+	}
 }

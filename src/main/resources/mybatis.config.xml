@@ -5,4 +5,7 @@
         <setting name="lazyLoadingEnabled" value="true"/>
         <setting name="aggressiveLazyLoading" value="false"/>
     </settings>
+    <!--<mappers>
+        <mapper resource="mapper/VisitorMapper.xml"></mapper>
+    </mappers>-->
 </configuration>
