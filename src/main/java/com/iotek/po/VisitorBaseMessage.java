@@ -14,9 +14,18 @@ public class VisitorBaseMessage implements Serializable {
 	private Timestamp visitorCreateTime;
 	private Timestamp visitorModifiedTime;
 	private Integer visitorIsDeleted;
+	private String visitorAddress;
 
 	public VisitorBaseMessage() {
 
+	}
+
+	public String getVisitorAddress() {
+		return visitorAddress;
+	}
+
+	public void setVisitorAddress(String visitorAddress) {
+		this.visitorAddress = visitorAddress;
 	}
 
 	public Integer getId() {
@@ -95,14 +104,15 @@ public class VisitorBaseMessage implements Serializable {
 	public String toString() {
 		return "VisitorBaseMessage{" +
 				"id=" + id +
-				"visitorId=" + visitorId +
-				"visitorName=" + visitorName +
-				"visitorAge=" + visitorAge +
-				"visitorSex=" + visitorSex +
-				"visitorNational=" + visitorNational +
-				"visitorCreateTime=" + visitorCreateTime +
-				"visitorModifiedTime=" + visitorModifiedTime +
-				"visitorIsDeleted=" + visitorIsDeleted +
-				"}";
+				", visitorId=" + visitorId +
+				", visitorName='" + visitorName + '\'' +
+				", visitorAge=" + visitorAge +
+				", visitorSex='" + visitorSex + '\'' +
+				", visitorNational='" + visitorNational + '\'' +
+				", visitorCreateTime=" + visitorCreateTime +
+				", visitorModifiedTime=" + visitorModifiedTime +
+				", visitorIsDeleted=" + visitorIsDeleted +
+				", visitorAddress='" + visitorAddress + '\'' +
+				'}';
 	}
 }

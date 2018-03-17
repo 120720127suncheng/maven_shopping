@@ -13,6 +13,7 @@
         <result column="visitor_modified_time" property="visitorModifiedTime"></result>
         <result column="visitor_is_on" property="visitorIsOn"></result>
         <result column="visitor_is_normal" property="visitorIsNormal"></result>
+        <collection property="visitorBaseMessage" ofType="VisitorBaseMessage" column="{id=id}" select="com.iotek.dao.VisitorBaseMessageMapper.findByVisitor"></collection>
     </resultMap>
     <sql id="createId">
         SELECT VIS_ID.nextval FROM dual
@@ -84,18 +85,25 @@
             </if>
         </trim>
     </insert>
-    <select id="findVisitorByPassword" parameterType="Visitor" resultType="visitorMap">
+    <select id="findVisitorByPassword" parameterType="Visitor" resultMap="visitorMap">
         <include refid="findVisitor"></include>
-        <where>
-            visitor_password=#{visitorPassword}
-            <choose>
-                <when test="visitorPhone !=null">
-                    AND visitor_phone=#{visitorPhone}
-                </when>
-                <otherwise>
-                    AND visitor_email=#{visitorEmail}
-                </otherwise>
-            </choose>
-        </where>
+        WHERE visitor_password=#{visitorPassword} AND visitor_is_normal=1 AND
+        <if test="visitorPhone!=null">
+            visitor_phone=#{visitorPhone}
+        </if>
+        <if test="visitorEmail!=null">
+            visitor_email=#{visitorEmail}
+        </if>
     </select>
+    <select id="findVisitorPhone" resultMap="visitorMap">
+        <include refid="findVisitor"></include>
+        WHERE visitor_phone=#{value}
+    </select>
+    <select id="findVisitorEmail" resultMap="visitorMap">
+        <include refid="findVisitor"></include>
+        WHERE visitor_email=#{value}
+    </select>
+    <update id="afterVisitorLogin" parameterType="Visitor">
+        UPDATE VISITOR SET VISITOR_IS_ON=1,VISITOR_LOGIN_TIME=#{visitorLoginTime} WHERE id=#{id}
+    </update>
 </mapper>

@@ -14,9 +14,18 @@ public class Visitor implements Serializable {
 	private Timestamp visitorModifiedTime;
 	private Integer visitorIsOn;//游客是否已登录
 	private Integer visitorIsNormal;
+	private VisitorBaseMessage visitorBaseMessage;
 
 	public Visitor() {
 
+	}
+
+	public VisitorBaseMessage getVisitorBaseMessage() {
+		return visitorBaseMessage;
+	}
+
+	public void setVisitorBaseMessage(VisitorBaseMessage visitorBaseMessage) {
+		this.visitorBaseMessage = visitorBaseMessage;
 	}
 
 	public Integer getId() {

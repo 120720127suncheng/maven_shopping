@@ -25,4 +25,19 @@ public class VisitorServiceImpl implements VisitorService {
     public Visitor findVisitorByPassword(Visitor visitor) {
         return visitorMapper.findVisitorByPassword(visitor);
     }
+
+    @Override
+    public Visitor findVisitorPhone(String visitorPhone) {
+        return visitorMapper.findVisitorPhone(visitorPhone);
+    }
+
+    @Override
+    public Visitor findVisitorEmail(String visitorEmail) {
+        return visitorMapper.findVisitorEmail(visitorEmail);
+    }
+
+    @Override
+    public boolean afterVisitorLogin(Visitor visitor) {
+        return visitorMapper.afterVisitorLogin(visitor);
+    }
 }

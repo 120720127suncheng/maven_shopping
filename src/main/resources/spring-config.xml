@@ -15,7 +15,7 @@
         http://www.springframework.org/schema/aop/spring-aop.xsd
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven></mvc:annotation-driven>
     <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
     <context:component-scan base-package="com.iotek"></context:component-scan>
 
@@ -76,12 +76,12 @@
     <mvc:resources mapping="/styles/**" location="/styles/"/>
     <mvc:resources mapping="/staticPages/**" location="/staticPages/"/>
     <!--拦截器-->
-   <!-- <mvc:interceptors>
+    <!--<mvc:interceptors>
         <mvc:interceptor>
-            <mvc:mapping path="/customer/*"/>
-            <mvc:exclude-mapping path="/**/*login*"></mvc:exclude-mapping>
-            <mvc:exclude-mapping path="/**/*reg*"></mvc:exclude-mapping>
-            <bean class="com.iotek.Controller.SessionHandlerInterceptor"></bean>
+            <mvc:mapping path="/visitor/*"/>
+            <mvc:exclude-mapping path="/**/*Login*"></mvc:exclude-mapping>
+            <mvc:exclude-mapping path="/**/*Register*"></mvc:exclude-mapping>
+            <bean class="com.iotek.filter.SessionHandlerInterceptor"></bean>
         </mvc:interceptor>
     </mvc:interceptors>-->
 </beans>

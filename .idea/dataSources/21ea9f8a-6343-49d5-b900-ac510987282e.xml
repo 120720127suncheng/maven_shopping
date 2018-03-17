@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" rdbms="ORACLE" format-version="4.7">
+    <root id="1"/>
+    <schema id="2" parent="1" name="SUNCHENG">
+      <ObjectId>62</ObjectId>
+      <IntrospectionTimestamp>2018-03-16.23:39:15</IntrospectionTimestamp>
+      <CreatedTimestamp>2018-03-14.02:56:51</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-16.23:39:08</ModifiedTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="PUBLIC">
+      <ObjectId>1</ObjectId>
+    </schema>
+    <schema id="4" parent="1" name="SYS">
+      <ObjectId>0</ObjectId>
+    </schema>
+    <schema id="5" parent="1" name="SYSTEM">
+      <ObjectId>5</ObjectId>
+    </schema>
+    <schema id="6" parent="1" name="OUTLN">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="7" parent="1" name="DIP">
+      <ObjectId>19</ObjectId>
+    </schema>
+    <schema id="8" parent="1" name="TSMSYS">
+      <ObjectId>21</ObjectId>
+    </schema>
+    <schema id="9" parent="1" name="DBSNMP">
+      <ObjectId>24</ObjectId>
+    </schema>
+    <schema id="10" parent="1" name="WMSYS">
+      <ObjectId>25</ObjectId>
+    </schema>
+    <schema id="11" parent="1" name="EXFSYS">
+      <ObjectId>34</ObjectId>
+    </schema>
+    <schema id="12" parent="1" name="DMSYS">
+      <ObjectId>35</ObjectId>
+    </schema>
+    <schema id="13" parent="1" name="CTXSYS">
+      <ObjectId>36</ObjectId>
+    </schema>
+    <schema id="14" parent="1" name="XDB">
+      <ObjectId>38</ObjectId>
+    </schema>
+    <schema id="15" parent="1" name="ANONYMOUS">
+      <ObjectId>39</ObjectId>
+    </schema>
+    <schema id="16" parent="1" name="ORDSYS">
+      <ObjectId>43</ObjectId>
+    </schema>
+    <schema id="17" parent="1" name="ORDPLUGINS">
+      <ObjectId>44</ObjectId>
+    </schema>
+    <schema id="18" parent="1" name="SI_INFORMTN_SCHEMA">
+      <ObjectId>45</ObjectId>
+    </schema>
+    <schema id="19" parent="1" name="MDSYS">
+      <ObjectId>46</ObjectId>
+    </schema>
+    <schema id="20" parent="1" name="OLAPSYS">
+      <ObjectId>47</ObjectId>
+    </schema>
+    <schema id="21" parent="1" name="MDDATA">
+      <ObjectId>50</ObjectId>
+    </schema>
+    <schema id="22" parent="1" name="SYSMAN">
+      <ObjectId>51</ObjectId>
+    </schema>
+    <schema id="23" parent="1" name="MGMT_VIEW">
+      <ObjectId>53</ObjectId>
+    </schema>
+    <schema id="24" parent="1" name="SCOTT">
+      <ObjectId>54</ObjectId>
+    </schema>
+    <schema id="25" parent="1" name="HR">
+      <ObjectId>55</ObjectId>
+    </schema>
+    <schema id="26" parent="1" name="OE">
+      <ObjectId>56</ObjectId>
+    </schema>
+    <schema id="27" parent="1" name="IX">
+      <ObjectId>57</ObjectId>
+    </schema>
+    <schema id="28" parent="1" name="SH">
+      <ObjectId>58</ObjectId>
+    </schema>
+    <schema id="29" parent="1" name="PM">
+      <ObjectId>59</ObjectId>
+    </schema>
+    <schema id="30" parent="1" name="BI">
+      <ObjectId>60</ObjectId>
+    </schema>
+    <schema id="31" parent="1" name="SCBIOSUN">
+      <ObjectId>61</ObjectId>
+    </schema>
+    <sequence id="32" parent="2" name="ADMIN_ID">
+      <ObjectId>55746</ObjectId>
+      <CreatedTimestamp>2018-03-14.03:40:40</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.03:40:40</ModifiedTimestamp>
+      <SequenceIdentity>1..99999</SequenceIdentity>
+      <CacheSize>-2147483648</CacheSize>
+    </sequence>
+    <sequence id="33" parent="2" name="DEPART_ID">
+      <ObjectId>55740</ObjectId>
+      <CreatedTimestamp>2018-03-14.03:17:41</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.03:17:41</ModifiedTimestamp>
+      <SequenceIdentity>1+1000..9999</SequenceIdentity>
+      <CacheSize>-2147483648</CacheSize>
+    </sequence>
+    <sequence id="34" parent="2" name="POSITION_ID">
+      <ObjectId>55743</ObjectId>
+      <CreatedTimestamp>2018-03-14.03:28:01</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.03:28:01</ModifiedTimestamp>
+      <SequenceIdentity>1..1000</SequenceIdentity>
+      <CacheSize>-2147483648</CacheSize>
+    </sequence>
+    <sequence id="35" parent="2" name="SALARY_ID">
+      <ObjectId>55758</ObjectId>
+      <CreatedTimestamp>2018-03-14.05:59:29</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.05:59:29</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>-2147483648</CacheSize>
+    </sequence>
+    <sequence id="36" parent="2" name="STAFF_ID">
+      <ObjectId>55751</ObjectId>
+      <CreatedTimestamp>2018-03-14.04:11:33</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.04:11:33</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>-2147483648</CacheSize>
+    </sequence>
+    <sequence id="37" parent="2" name="VIS_BASE_ID">
+      <ObjectId>55848</ObjectId>
+      <CreatedTimestamp>2018-03-14.17:50:01</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.17:50:01</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>-2147483648</CacheSize>
+    </sequence>
+    <sequence id="38" parent="2" name="VIS_ID">
+      <ObjectId>55736</ObjectId>
+      <CreatedTimestamp>2018-03-14.03:00:11</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.03:00:11</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>-2147483648</CacheSize>
+    </sequence>
+    <sequence id="39" parent="2" name="VIS_RES_ID">
+      <ObjectId>55737</ObjectId>
+      <CreatedTimestamp>2018-03-14.03:00:42</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.03:00:42</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>-2147483648</CacheSize>
+    </sequence>
+    <table id="40" parent="2" name="ADMIN">
+      <ObjectId>55749</ObjectId>
+      <CreatedTimestamp>2018-03-14.04:10:36</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.06:29:03</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="41" parent="2" name="DEPARTMENT">
+      <ObjectId>55738</ObjectId>
+      <CreatedTimestamp>2018-03-14.03:16:29</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.03:16:29</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="42" parent="2" name="POSITION">
+      <ObjectId>55741</ObjectId>
+      <CreatedTimestamp>2018-03-14.03:27:15</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.03:27:15</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="43" parent="2" name="SALARY">
+      <ObjectId>55756</ObjectId>
+      <CreatedTimestamp>2018-03-14.05:59:10</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.05:59:10</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="44" parent="2" name="STAFF">
+      <ObjectId>55747</ObjectId>
+      <CreatedTimestamp>2018-03-14.04:07:43</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.06:32:19</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="45" parent="2" name="VISITOR">
+      <ObjectId>55732</ObjectId>
+      <CreatedTimestamp>2018-03-14.02:56:51</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-16.06:51:03</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="46" parent="2" name="VISITOR_BASE_MESSAGE">
+      <ObjectId>55846</ObjectId>
+      <CreatedTimestamp>2018-03-14.17:49:31</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-16.23:39:08</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="47" parent="2" name="VISITOR_RESUME">
+      <ObjectId>55734</ObjectId>
+      <CreatedTimestamp>2018-03-14.02:58:45</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.02:58:45</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <column id="48" parent="40" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="40" name="ADMIN_NAME">
+      <Position>2</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="40" name="ADMIN_PASSWORD">
+      <Position>3</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="40" name="ADMIN_IS_DELETED">
+      <Position>4</Position>
+      <DataType>NUMBER(1)|0</DataType>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="52" parent="40" name="ADMIN_LOGIN_TIME">
+      <Position>5</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="53" parent="40" name="ADMIN_CREATE_TIME">
+      <Position>6</Position>
+      <DataType>DATE|0</DataType>
+      <DefaultExpression>sysdate</DefaultExpression>
+    </column>
+    <column id="54" parent="40" name="ADMIN_MODIFIED_TIME">
+      <Position>7</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="55" parent="40" name="ADMIN_IS_LOGIN">
+      <Position>8</Position>
+      <DataType>NUMBER(1)|0</DataType>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <index id="56" parent="40" name="SYS_C006503">
+      <ObjectId>55750</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-03-14.04:10:36</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.04:10:36</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="57" parent="40" name="SYS_C006503">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-14.04:10:36</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C006503</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="58" parent="41" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="41" name="DEPARTMENT_NAME">
+      <Position>2</Position>
+      <DataType>NVARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="41" name="DEPARTMENT_LOCATION">
+      <Position>3</Position>
+      <DataType>NVARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="41" name="DEPARTMENT_IS_DELETED">
+      <Position>4</Position>
+      <DataType>NUMBER(1)|0</DataType>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="62" parent="41" name="DEPARTMENT_CREATE_TIME">
+      <Position>5</Position>
+      <DataType>DATE|0</DataType>
+      <DefaultExpression>sysdate</DefaultExpression>
+    </column>
+    <column id="63" parent="41" name="DEPARTMENT_MODIFIED_TIME">
+      <Position>6</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="64" parent="41" name="DEPARTMENT_BUDGET">
+      <Position>7</Position>
+      <DataType>NUMBER(11,2)|0</DataType>
+    </column>
+    <column id="65" parent="41" name="DEPARTMENT_ACTUAL_EXPENSE">
+      <Position>8</Position>
+      <DataType>NUMBER(11,2)|0</DataType>
+    </column>
+    <index id="66" parent="41" name="SYS_C006487">
+      <ObjectId>55739</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-03-14.03:16:29</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.03:16:29</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="67" parent="41" name="SYS_C006487">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-14.03:16:29</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C006487</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="68" parent="42" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="42" name="DEPARTMENT_ID">
+      <Position>2</Position>
+      <DataType>NUMBER(11)|0</DataType>
+    </column>
+    <column id="70" parent="42" name="POSITION_NAME">
+      <Position>3</Position>
+      <DataType>NVARCHAR2(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="71" parent="42" name="POSITION_IS_DELETED">
+      <Position>4</Position>
+      <DataType>NUMBER(1)|0</DataType>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="72" parent="42" name="POSITION_CREATE_TIME">
+      <Position>5</Position>
+      <DataType>DATE|0</DataType>
+      <DefaultExpression>sysdate</DefaultExpression>
+    </column>
+    <column id="73" parent="42" name="POSITION_MODIFIED_TIME">
+      <Position>6</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <index id="74" parent="42" name="SYS_C006489">
+      <ObjectId>55742</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-03-14.03:27:15</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.03:27:15</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="75" parent="42" name="SYS_C006489">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-14.03:27:15</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C006489</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="76" parent="42" name="SYS_C006490">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-14.03:27:15</ModifiedTimestamp>
+      <ColNames>DEPARTMENT_ID</ColNames>
+      <RefSchemaName>SUNCHENG</RefSchemaName>
+      <RefTableName>DEPARTMENT</RefTableName>
+      <RefKeyName>SYS_C006487</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="77" parent="43" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="78" parent="43" name="STAFF_ID">
+      <Position>2</Position>
+      <DataType>NUMBER(11)|0</DataType>
+    </column>
+    <column id="79" parent="43" name="BASE_SALARY">
+      <Position>3</Position>
+      <DataType>NUMBER(11,2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="80" parent="43" name="PERFORMANCE_BONUS">
+      <Position>4</Position>
+      <DataType>NUMBER(11,2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="81" parent="43" name="ATTENDANCE_BONUS">
+      <Position>5</Position>
+      <DataType>NUMBER(11,2)|0</DataType>
+    </column>
+    <column id="82" parent="43" name="PUNISH_AND_AWARD">
+      <Position>6</Position>
+      <DataType>NUMBER(11,2)|0</DataType>
+    </column>
+    <column id="83" parent="43" name="SOCIAL_INSURANCE">
+      <Position>7</Position>
+      <DataType>NUMBER(11,2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="84" parent="43" name="SALARY_CREATE_TIME">
+      <Position>8</Position>
+      <DataType>DATE|0</DataType>
+      <DefaultExpression>sysdate</DefaultExpression>
+    </column>
+    <column id="85" parent="43" name="SALARY_PROVIDE_TIME">
+      <Position>9</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="86" parent="43" name="SALARY_MODIFIED_TIME">
+      <Position>10</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="87" parent="43" name="SALARY_IS_DELETED">
+      <Position>11</Position>
+      <DataType>NUMBER(1)|0</DataType>
+      <DefaultExpression>0&#xd;
+</DefaultExpression>
+    </column>
+    <index id="88" parent="43" name="SYS_C006507">
+      <ObjectId>55757</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-03-14.05:59:10</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.05:59:10</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="89" parent="43" name="SYS_C006507">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-14.05:59:10</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C006507</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="90" parent="43" name="SYS_C006508">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-14.05:59:10</ModifiedTimestamp>
+      <ColNames>STAFF_ID</ColNames>
+      <RefSchemaName>SUNCHENG</RefSchemaName>
+      <RefTableName>STAFF</RefTableName>
+      <RefKeyName>SYS_C006499</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="91" parent="44" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="92" parent="44" name="POSITION_ID">
+      <Position>2</Position>
+      <DataType>NUMBER(11)|0</DataType>
+    </column>
+    <column id="93" parent="44" name="STAFF_NAME">
+      <Position>3</Position>
+      <DataType>VARCHAR2(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="94" parent="44" name="STAFF_SEX">
+      <Position>4</Position>
+      <DataType>VARCHAR2(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="95" parent="44" name="STAFF_PHONE">
+      <Position>5</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="96" parent="44" name="STAFF_EMAIL">
+      <Position>6</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="97" parent="44" name="STAFF_HIREDATE">
+      <Position>7</Position>
+      <DataType>DATE|0</DataType>
+      <DefaultExpression>sysdate</DefaultExpression>
+    </column>
+    <column id="98" parent="44" name="STAFF_DIMISSION_TIME">
+      <Position>8</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="99" parent="44" name="STAFF_IS_LEFT">
+      <Position>9</Position>
+      <DataType>NUMBER(1)|0</DataType>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="100" parent="44" name="STAFF_BASE_SALARY">
+      <Position>10</Position>
+      <DataType>NUMBER(11,2)|0</DataType>
+    </column>
+    <column id="101" parent="44" name="STAFF_TYPE">
+      <Position>11</Position>
+      <DataType>NUMBER(1)|0</DataType>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="102" parent="44" name="STAFF_MODIFIED_TIME">
+      <Position>12</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="103" parent="44" name="STAFF_LOGIN_TIME">
+      <Position>13</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="104" parent="44" name="STAFF_IS_LOGIN">
+      <Position>14</Position>
+      <DataType>NUMBER(1)|0</DataType>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="105" parent="44" name="STAFF_PASSWORD">
+      <Position>15</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="106" parent="44" name="SYS_C006499">
+      <ObjectId>55748</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-03-14.04:07:43</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.04:07:43</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="107" parent="44" name="SYS_C006499">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-14.04:07:43</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C006499</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="108" parent="44" name="SYS_C006500">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-14.04:07:43</ModifiedTimestamp>
+      <ColNames>POSITION_ID</ColNames>
+      <RefSchemaName>SUNCHENG</RefSchemaName>
+      <RefTableName>POSITION</RefTableName>
+      <RefKeyName>SYS_C006489</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <check id="109" parent="44" name="SYS_C006498">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-14.04:07:43</ModifiedTimestamp>
+      <ColNames>STAFF_SEX</ColNames>
+      <Predicate>staff_sex IN (&apos;男&apos;,&apos;女&apos;)</Predicate>
+    </check>
+    <column id="110" parent="45" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="111" parent="45" name="VISITOR_PASSWORD">
+      <Position>2</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="112" parent="45" name="VISITOR_PHONE">
+      <Position>3</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="113" parent="45" name="VISITOR_EMAIL">
+      <Position>4</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="114" parent="45" name="VISITOR_LOGIN_TIME">
+      <Position>5</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="115" parent="45" name="VISITOR_CREATE_TIME">
+      <Position>6</Position>
+      <DataType>DATE|0</DataType>
+      <DefaultExpression>sysdate</DefaultExpression>
+    </column>
+    <column id="116" parent="45" name="VISITOR_MODIFIED_TIME">
+      <Position>7</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="117" parent="45" name="VISITOR_IS_ON">
+      <Position>8</Position>
+      <DataType>NUMBER(1)|0</DataType>
+      <DefaultExpression>(0)</DefaultExpression>
+    </column>
+    <column id="118" parent="45" name="VISITOR_IS_NORMAL">
+      <Position>9</Position>
+      <DataType>NUMBER(1)|0</DataType>
+      <DefaultExpression>1&#xd;
+</DefaultExpression>
+    </column>
+    <index id="119" parent="45" name="SYS_C006474">
+      <ObjectId>55733</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-03-14.02:56:51</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.02:56:51</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="120" parent="45" name="SYS_C006474">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-14.02:56:51</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C006474</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="121" parent="46" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="122" parent="46" name="VISITOR_ID">
+      <Position>2</Position>
+      <DataType>NUMBER(11)|0</DataType>
+    </column>
+    <column id="123" parent="46" name="VISITOR_NAME">
+      <Position>3</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="124" parent="46" name="VISITOR_AGE">
+      <Position>4</Position>
+      <DataType>NUMBER(3)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="125" parent="46" name="VISITOR_SEX">
+      <Position>5</Position>
+      <DataType>NVARCHAR2(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="126" parent="46" name="VISITOR_NATIONAL">
+      <Position>6</Position>
+      <DataType>NVARCHAR2(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="127" parent="46" name="VISITOR_CREATE_TIME">
+      <Position>7</Position>
+      <DataType>DATE|0</DataType>
+      <DefaultExpression>sysdate</DefaultExpression>
+    </column>
+    <column id="128" parent="46" name="VISITOR_MODIFIED_TIME">
+      <Position>8</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="129" parent="46" name="VISITOR_IS_DELETED">
+      <Position>9</Position>
+      <DataType>NUMBER(1)|0</DataType>
+      <DefaultExpression>0&#xd;
+</DefaultExpression>
+    </column>
+    <column id="130" parent="46" name="VISITOR_ADDRESS">
+      <Position>10</Position>
+      <DataType>NVARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="131" parent="46" name="SYS_C006536">
+      <ObjectId>55847</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-03-14.17:49:31</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.17:49:31</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="132" parent="46" name="SYS_C006536">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-14.17:49:31</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C006536</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="133" parent="46" name="SYS_C006537">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-14.17:49:31</ModifiedTimestamp>
+      <ColNames>VISITOR_ID</ColNames>
+      <RefSchemaName>SUNCHENG</RefSchemaName>
+      <RefTableName>VISITOR</RefTableName>
+      <RefKeyName>SYS_C006474</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <check id="134" parent="46" name="SYS_C006535">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-14.17:49:31</ModifiedTimestamp>
+      <ColNames>VISITOR_SEX</ColNames>
+      <Predicate>visitor_sex IN (&apos;男&apos;,&apos;女&apos;)</Predicate>
+    </check>
+    <column id="135" parent="47" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="136" parent="47" name="VISITOR_ID">
+      <Position>2</Position>
+      <DataType>NUMBER(11)|0</DataType>
+    </column>
+    <column id="137" parent="47" name="VISITOR_JOB_OBJECTIVE">
+      <Position>3</Position>
+      <DataType>NVARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="138" parent="47" name="VISITOR_RESUME_NAME">
+      <Position>4</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="139" parent="47" name="VISITOR_SPECIALITY">
+      <Position>5</Position>
+      <DataType>NVARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="140" parent="47" name="VISITOR_EDUCATION_BACKGROUND">
+      <Position>6</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="141" parent="47" name="VISTOR_EDUCATION_DESCRIPTION">
+      <Position>7</Position>
+      <DataType>NVARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="142" parent="47" name="VISITOR_WORKING_YEARS">
+      <Position>8</Position>
+      <DataType>NUMBER(3)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="143" parent="47" name="VISITOR_WORKING_DESCRIPTION">
+      <Position>9</Position>
+      <DataType>NVARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="144" parent="47" name="VISITOR_EXPECTED_SALARY">
+      <Position>10</Position>
+      <DataType>NUMBER(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="145" parent="47" name="VISITOR_RESUME_ATTACHMENT">
+      <Position>11</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+    </column>
+    <column id="146" parent="47" name="VISITOR_RESUME_IS_DELETED">
+      <Position>12</Position>
+      <DataType>NUMBER(1)|0</DataType>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="147" parent="47" name="VISITOR_RESUME_CREATE_TIME">
+      <Position>13</Position>
+      <DataType>DATE|0</DataType>
+      <DefaultExpression>sysdate</DefaultExpression>
+    </column>
+    <column id="148" parent="47" name="VISITOR_RESUME_MODIFIED_TIME">
+      <Position>14</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <index id="149" parent="47" name="SYS_C006483">
+      <ObjectId>55735</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-03-14.02:58:45</CreatedTimestamp>
+      <ModifiedTimestamp>2018-03-14.02:58:45</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="150" parent="47" name="SYS_C006483">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-14.02:58:45</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C006483</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="151" parent="47" name="SYS_C006484">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-03-14.02:58:45</ModifiedTimestamp>
+      <ColNames>VISITOR_ID</ColNames>
+      <RefSchemaName>SUNCHENG</RefSchemaName>
+      <RefTableName>VISITOR</RefTableName>
+      <RefKeyName>SYS_C006474</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+  </database-model>
+</dataSource>

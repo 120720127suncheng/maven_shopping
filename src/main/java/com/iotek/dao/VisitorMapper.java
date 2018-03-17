@@ -11,4 +11,7 @@ import com.iotek.po.Visitor;
 public interface VisitorMapper {
     boolean addVisitor(Visitor visitor);
     Visitor findVisitorByPassword(Visitor visitor);
+    Visitor findVisitorPhone(String visitorPhone);
+    Visitor findVisitorEmail(String visitorEmail);
+    boolean afterVisitorLogin(Visitor visitor);
 }
