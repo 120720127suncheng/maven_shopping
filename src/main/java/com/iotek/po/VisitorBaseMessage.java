@@ -14,18 +14,54 @@ public class VisitorBaseMessage implements Serializable {
 	private Timestamp visitorCreateTime;
 	private Timestamp visitorModifiedTime;
 	private Integer visitorIsDeleted;
-	private String visitorAddress;
+	private String province;
+	private String city;
+	private String country;
+	private String street;
+	private String photo;
 
 	public VisitorBaseMessage() {
 
 	}
 
-	public String getVisitorAddress() {
-		return visitorAddress;
+	public String getPhoto() {
+		return photo;
 	}
 
-	public void setVisitorAddress(String visitorAddress) {
-		this.visitorAddress = visitorAddress;
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+	public String getProvince() {
+		return province;
+	}
+
+	public void setProvince(String province) {
+		this.province = province;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getStreet() {
+		return street;
+	}
+
+	public void setStreet(String street) {
+		this.street = street;
 	}
 
 	public Integer getId() {
@@ -112,7 +148,11 @@ public class VisitorBaseMessage implements Serializable {
 				", visitorCreateTime=" + visitorCreateTime +
 				", visitorModifiedTime=" + visitorModifiedTime +
 				", visitorIsDeleted=" + visitorIsDeleted +
-				", visitorAddress='" + visitorAddress + '\'' +
+				", province='" + province + '\'' +
+				", city='" + city + '\'' +
+				", country='" + country + '\'' +
+				", street='" + street + '\'' +
+				", photo='" + photo + '\'' +
 				'}';
 	}
 }

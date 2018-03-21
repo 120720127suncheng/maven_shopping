@@ -19,11 +19,11 @@ public class VisitorBaseMessageController {
     @Autowired
     private VisitorBaseMessageService visitorBaseMessageService;
     @RequestMapping(value = "visitorRegisterBaseMessage.do")
-    public String addVisitorBaseMessage(VisitorBaseMessage visitorBaseMessage, Model model,String province,String city,String country,String street){
+    public String addVisitorBaseMessage(VisitorBaseMessage visitorBaseMessage, Model model){
             if(visitorBaseMessage.getVisitorAge()==null||visitorBaseMessage.getVisitorName()==null
                     ||visitorBaseMessage.getVisitorNational()==null
                     ||visitorBaseMessage.getVisitorSex()==null
-                    ||province==null||city==null||country==null||street==null){
+                    ||visitorBaseMessage.getProvince()==null||visitorBaseMessage.getCity()==null||visitorBaseMessage.getCountry()==null||visitorBaseMessage.getStreet()==null){
                 model.addAttribute("info","个人信息填写失败!");
                 return "visitor/visitorRegisterBaseMessage";
             }else {/*先检查有没有该人的个人信息,有就不让他添加*/
@@ -33,7 +33,6 @@ public class VisitorBaseMessageController {
                     model.addAttribute("info","你已经有个人信息了!");
                     return "visitor/visitorRegisterBaseMessage";
                 }else {/*否则就添加*/
-                    visitorBaseMessage.setVisitorAddress(province+city+country+street);
                     if(visitorBaseMessageService.addVisitorBaseMessage(visitorBaseMessage)){
                         return "allIndex";
                     }else {
@@ -44,4 +43,5 @@ public class VisitorBaseMessageController {
 
             }
     }
+
 }

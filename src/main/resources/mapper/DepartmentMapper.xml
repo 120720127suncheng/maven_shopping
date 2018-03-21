@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iotek.dao.DepartmentMapper">
+    <resultMap id="departmentMap" type="Department">
+        <id column="id" property="id"></id>
+        <result column="department_name" property="departmentName"></result>
+        <result column="department_location" property="departmentLocation"></result>
+        <result column="department_is_deleted" property="departmentIsDeleted"></result>
+        <result column="department_create_time" property="departmentCreateTime"></result>
+        <result column="department_modified_time" property="departmentModifiedTime"></result>
+        <result column="department_budget" property="departmentBudget"></result>
+        <result column="department_actual_expense" property="departmentActualExpense"></result>
+        <collection property="position" ofType="Position" column="{id=id}" select="com.iotek.dao.PositionMapper.findPositionByDepartment"></collection>
+    </resultMap>
+    <sql id="createId">
+        SELECT DEPART_ID.nextval FROM dual
+    </sql>
+    <sql id="findDepartment">
+        SELECT * FROM DEPARTMENT
+    </sql>
+    <insert id="addDepartment" parameterType="Department">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            <include refid="createId"></include>
+        </selectKey>
+        INSERT INTO DEPARTMENT
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">
+                id,
+            </if>
+            <if test="departmentName!=null">
+                department_name,
+            </if>
+            <if test="departmentLocation!=null">
+                department_location,
+            </if>
+            <if test="departmentIsDeleted!=null">
+                department_is_deleted,
+            </if>
+            <if test="departmentCreateTime!=null">
+                department_create_time,
+            </if>
+            <if test="departmentModifiedTime!=null">
+                department_modified_time,
+            </if>
+            <if test="departmentBudget!=null">
+                department_budget,
+            </if>
+            <if test="departmentActualExpense!=null">
+                department_actual_expense,
+            </if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">
+                #{id},
+            </if>
+            <if test="departmentName!=null">
+                #{departmentName},
+            </if>
+            <if test="departmentLocation!=null">
+                #{departmentLocation},
+            </if>
+            <if test="departmentIsDeleted!=null">
+                #{departmentIsDeleted},
+            </if>
+            <if test="departmentCreateTime!=null">
+                #{departmentCreateTime},
+            </if>
+            <if test="departmentModifiedTime!=null">
+                #{departmentModifiedTime},
+            </if>
+            <if test="departmentBudget!=null">
+                #{departmentBudget},
+            </if>
+            <if test="departmentActualExpense!=null">
+                #{departmentActualExpense},
+            </if>
+        </trim>
+    </insert>
+    <select id="findDepartmentByName" parameterType="Department" resultMap="departmentMap">
+        <include refid="findDepartment"></include>
+        WHERE department_name=#{departmentName} AND department_is_deleted=0
+    </select>
+    <select id="findDepartmentByDId" parameterType="Department" resultMap="departmentMap">
+        <include refid="findDepartment"></include>
+        WHERE id=#{id} AND department_is_deleted=0
+    </select>
+    <update id="updateDepartment" parameterType="Department">
+        UPDATE DEPARTMENT
+        <set>
+            <if test="departmentName!=null">DEPARTMENT_NAME=#{departmentName},</if>
+            <if test="departmentLocation !=null">DEPARTMENT_LOCATION=#{departmentLocation},</if>
+            <if test="departmentIsDeleted !=null">DEPARTMENT_IS_DELETED=#{departmentIsDeleted},</if>
+            <if test="departmentCreateTime !=null">DEPARTMENT_CREATE_TIME=#{departmentCreateTime},</if>
+            <if test="departmentModifiedTime !=null">DEPARTMENT_MODIFIED_TIME=#{departmentModifiedTime},</if>
+            <if test="departmentBudget !=null">DEPARTMENT_BUDGET=#{departmentBudget},</if>
+            <if test="departmentActualExpense !=null">DEPARTMENT_ACTUAL_EXPENSE=#{departmentActualExpense},</if>
+        </set>
+        <include refid="checkId"></include>
+    </update>
+    <sql id="checkId">
+        <where>
+            <choose>
+                <when test="id !=null">
+                    AND id=#{id}
+                </when>
+                <otherwise>
+                    AND 1=2
+                </otherwise>
+            </choose>
+        </where>
+    </sql>
+    <select id="findAllDepartment" resultMap="departmentMap">
+        <include refid="findDepartment"></include>
+    </select>
+    <select id="findExistDepartment" resultMap="departmentMap">
+        <include refid="findDepartment"></include>
+        WHERE department_is_deleted=0
+    </select>
+</mapper>

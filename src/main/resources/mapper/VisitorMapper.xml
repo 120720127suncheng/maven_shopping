@@ -92,12 +92,16 @@
             visitor_phone=#{visitorPhone}
         </if>
         <if test="visitorEmail!=null">
-            visitor_email=#{visitorEmail}
+            AND visitor_email=#{visitorEmail}
         </if>
     </select>
     <select id="findVisitorPhone" resultMap="visitorMap">
         <include refid="findVisitor"></include>
         WHERE visitor_phone=#{value}
+    </select>
+    <select id="findVisitorByVId" parameterType="Visitor" resultMap="visitorMap">
+        <include refid="findVisitor"></include>
+        WHERE id=#{id}
     </select>
     <select id="findVisitorEmail" resultMap="visitorMap">
         <include refid="findVisitor"></include>
@@ -106,4 +110,30 @@
     <update id="afterVisitorLogin" parameterType="Visitor">
         UPDATE VISITOR SET VISITOR_IS_ON=1,VISITOR_LOGIN_TIME=#{visitorLoginTime} WHERE id=#{id}
     </update>
+    <update id="updateVisitor" parameterType="Visitor">
+        UPDATE VISITOR
+        <set>
+            <if test="visitorPassword !=null">VISITOR_PASSWORD=#{visitorPassword},</if>
+            <if test="visitorPhone !=null">VISITOR_PHONE=#{visitorPhone},</if>
+            <if test="visitorEmail !=null">visitor_EMAIL=#{visitorEmail},</if>
+            <if test="visitorLoginTime !=null">visitor_login_time=#{visitorLoginTime},</if>
+            <if test="visitorCreateTime !=null">visitor_create_time=#{visitorCreateTime},</if>
+            <if test="visitorModifiedTime !=null">visitor_modified_time=#{visitorModifiedTime},</if>
+            <if test="visitorIsOn !=null">visitor_is_on=#{visitorIsOn},</if>
+            <if test="visitorIsNormal !=null">visitor_is_normal=#{visitorIsNormal},</if>
+        </set>
+        <include refid="checkId"></include>
+    </update>
+    <sql id="checkId">
+        <where>
+            <choose>
+                <when test="id !=null">
+                    AND id=#{id}
+                </when>
+                <otherwise>
+                    AND 1=2
+                </otherwise>
+            </choose>
+        </where>
+    </sql>
 </mapper>

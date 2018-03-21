@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iotek.dao.StaffMapper">
+    <resultMap id="staffMap" type="Staff">
+        <id column="id" property="id"></id>
+        <result column="position_id" property="positionId"></result>
+        <result column="staff_name" property="staffName"></result>
+        <result column="staff_sex" property="staffSex"></result>
+        <result column="staff_phone" property="staffPhone"></result>
+        <result column="staff_email" property="staffEmail"></result>
+        <result column="staff_hireate" property="staffHiredate"></result>
+        <result column="staff_dimission_time" property="staffDimissionTime"></result>
+        <result column="staff_is_left" property="staffIsLeft"></result>
+        <result column="staff_base_salary" property="staffBaseSalary"></result>
+        <result column="staff_type" property="staffType"></result>
+        <result column="staff_modified_time" property="staffModifiedTime"></result>
+        <result column="staff_login_time" property="staffLoginTime"></result>
+        <result column="staff_is_login" property="staffIsLogin"></result>
+        <result column="staff_password" property="staffPassword"></result>
+    </resultMap>
+    <sql id="createId">
+        SELECT STAFF_ID.nextval FROM dual
+    </sql>
+    <sql id="findStaff">
+        SELECT * FROM STAFF
+    </sql>
+    <insert id="addStaff" parameterType="Staff">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            <include refid="createId"></include>
+        </selectKey>
+        INSERT INTO STAFF
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">
+                id,
+            </if>
+            <if test="positionId!=null">
+                position_id,
+            </if>
+            <if test="staffName!=null">
+                staff_name,
+            </if>
+            <if test="staffSex!=null">
+                staff_sex,
+            </if>
+            <if test="staffPhone!=null">
+                staff_phone,
+            </if>
+            <if test="staffEmail!=null">
+                staff_email,
+            </if>
+            <if test="staffHiredate!=null">
+                staff_hiredate,
+            </if>
+            <if test="staffDimissionTime!=null">
+                staff_dimission_time,
+            </if>
+            <if test="staffIsLeft!=null">
+                staff_is_left,
+            </if>
+            <if test="staffBaseSalary">
+                staff_base_salary,
+            </if>
+            <if test="staffType">
+                staff_type,
+            </if>
+            <if test="staffModifiedTime">
+                staff_modified_time,
+            </if>
+            <if test="staffLoginTime">
+                staff_login_time,
+            </if>
+            <if test="staffIsLogin">
+                staff_is_login,
+            </if>
+            <if test="staffPassword">
+                staff_password,
+            </if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">
+                #{id},
+            </if>
+            <if test="positionId!=null">
+                #{positionId},
+            </if>
+            <if test="staffName!=null">
+                #{staffName},
+            </if>
+            <if test="staffSex!=null">
+                #{staffSex},
+            </if>
+            <if test="staffPhone!=null">
+                #{staffPhone},
+            </if>
+            <if test="staffEmail!=null">
+                #{staffEmail},
+            </if>
+            <if test="staffHiredate!=null">
+                #{staffHiredate},
+            </if>
+            <if test="staffDimissionTime!=null">
+                #{staffDimissionTime},
+            </if>
+            <if test="staffIsLeft!=null">
+                #{staffIsLeft},
+            </if>
+            <if test="staffBaseSalary">
+                #{staffBaseSalary},
+            </if>
+            <if test="staffType">
+                #{staffType},
+            </if>
+            <if test="staffModifiedTime">
+                #{staffModifiedTime},
+            </if>
+            <if test="staffLoginTime">
+                #{staffLoginTime},
+            </if>
+            <if test="staffIsLogin">
+                #{staffIsLogin},
+            </if>
+            <if test="staffPassword">
+                #{staffPassword},
+            </if>
+        </trim>
+    </insert>
+    <select id="findStaffByPassword" parameterType="Staff" resultMap="staffMap">
+        <include refid="findStaff"></include>
+        WHERE staff_password=#{staffPassword} AND staff_is_left=0 AND staff_is_login=0
+        AND staff_email=#{staffEmail}
+    </select>
+    <update id="updateStaff" parameterType="Staff">
+        UPDATE STAFF
+        <set>
+            <if test="positionId!=null">position_id=#{positionId},</if>
+            <if test="staffName !=null">staff_name=#{staffName},</if>
+            <if test="staffSex !=null">staff_sex=#{staffSex},</if>
+            <if test="staffPhone !=null">staff_phone=#{staffPhone},</if>
+            <if test="staffEmail !=null">staff_email=#{staffEmail},</if>
+            <if test="staffHiredate !=null">staff_hiredate=#{staffHiredate},</if>
+            <if test="staffDimissionTime !=null">staff_dimission_time=#{staffDimissionTime},</if>
+            <if test="staffIsLeft !=null">staff_is_left=#{staffIsLeft},</if>
+            <if test="staffBaseSalary !=null">staff_base_salary=#{staffBaseSalary},</if>
+            <if test="staffType !=null">staff_type=#{staffType},</if>
+            <if test="staffModifiedTime !=null">staff_modified_time=#{staffModifiedTime},</if>
+            <if test="staffLoginTime !=null">staff_login_time=#{staffLoginTime},</if>
+            <if test="staffIsLogin !=null">staff_is_login=#{staffIsLogin},</if>
+            <if test="staffPassword !=null">staff_password=#{staffPassword},</if>
+        </set>
+        <include refid="checkId"></include>
+    </update>
+    <sql id="checkId">
+        <where>
+            <choose>
+                <when test="id !=null">
+                    AND id=#{id}
+                </when>
+                <otherwise>
+                    AND 1=2
+                </otherwise>
+            </choose>
+        </where>
+    </sql>
+    <select id="findStaffBySId" parameterType="Staff" resultMap="staffMap">
+        <include refid="findStaff"></include>
+        WHERE id=#{id}
+    </select>
+    <select id="findStaffByPosition" parameterType="Position" resultMap="staffMap">
+        <include refid="findStaff"></include>
+        WHERE position_id=#{id} AND staff_is_left=0
+    </select>
+</mapper>

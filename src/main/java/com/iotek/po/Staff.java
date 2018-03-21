@@ -13,14 +13,14 @@ public class Staff implements Serializable {
 	private String staffSex;
 	private String staffPhone;
 	private String staffEmail;
-	private Timestamp staffHiredate;//Ô±¹¤ÈëÖ°Ê±¼ä
-	private Timestamp staffDimissionTime;//ÀëÖ°Ê±¼ä
-	private Integer staffIsLeft;//ÊÇ·ñÀëÖ°
-	private BigDecimal staffBaseSalary;//»ù±¾¹¤×Ê
-	private Integer staffType;//Ô±¹¤ÀàÐÍ/*Ô±¹¤ÀàÐÍ 0-ÆÕÍ¨ 1-¾­Àí 2-×Ü¾­Àí 3-¶­ÊÂ³¤*/
+	private Timestamp staffHiredate;
+	private Timestamp staffDimissionTime;
+	private Integer staffIsLeft;
+	private BigDecimal staffBaseSalary;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private Integer staffType;//Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/*Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0-ï¿½ï¿½Í¨ 1-ï¿½ï¿½ï¿½ï¿½ 2-ï¿½Ü¾ï¿½ï¿½ï¿½ 3-ï¿½ï¿½ï¿½Â³ï¿½*/
 	private Timestamp staffModifiedTime;
 	private Timestamp staffLoginTime;
-	private Integer staffIsLogin;//Ô±¹¤ÕËºÅÊÇ·ñµÇÂ¼
+	private Integer staffIsLogin;//Ô±ï¿½ï¿½ï¿½Ëºï¿½ï¿½Ç·ï¿½ï¿½Â¼
 
 	public Staff() {
 

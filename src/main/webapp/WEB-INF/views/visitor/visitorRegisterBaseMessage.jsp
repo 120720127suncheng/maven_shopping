@@ -149,7 +149,7 @@
             <option value="女">女</option>
             </select>
         <span id="showVisitorSex"></span><br>
-        民族:<select class="form-control " name="visitorNational" id="visitorNational"><option value="">请选择</option></select>
+        民族:<select class="form-control " name="visitorNational" id="visitorNational" style="width: 200px" onblur="checkVisitorNational(this.value)"><option value="">请选择</option></select>
         <span id="showVisitorNational"></span><br>
         家庭住址:<select id="province" runat="server" name="province" onblur="checkProvince(this.value)"></select><span id="showProvince"></span><br>
                 <select id="city" runat="server" name="city" onblur="checkCity(this.value)"></select><span id="showCity"></span><br>

@@ -2,6 +2,7 @@ package com.iotek.po;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 
 public class Position implements Serializable {
 
@@ -11,9 +12,18 @@ public class Position implements Serializable {
 	private Integer positionIsDeleted;
 	private Timestamp positionCreateTime;
 	private Timestamp positionModifiedTime;
+	private List<Staff> staff;
 
 	public Position() {
 
+	}
+
+	public List<Staff> getStaff() {
+		return staff;
+	}
+
+	public void setStaff(List<Staff> staff) {
+		this.staff = staff;
 	}
 
 	public Integer getId() {
@@ -68,11 +78,12 @@ public class Position implements Serializable {
 	public String toString() {
 		return "Position{" +
 				"id=" + id +
-				"departmentId=" + departmentId +
-				"positionName=" + positionName +
-				"positionIsDeleted=" + positionIsDeleted +
-				"positionCreateTime=" + positionCreateTime +
-				"positionModifiedTime=" + positionModifiedTime +
-				"}";
+				", departmentId=" + departmentId +
+				", positionName='" + positionName + '\'' +
+				", positionIsDeleted=" + positionIsDeleted +
+				", positionCreateTime=" + positionCreateTime +
+				", positionModifiedTime=" + positionModifiedTime +
+				", staff=" + staff +
+				'}';
 	}
 }

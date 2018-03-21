@@ -11,4 +11,5 @@ import com.iotek.po.VisitorBaseMessage;
 public interface VisitorBaseMessageMapper {
     boolean addVisitorBaseMessage(VisitorBaseMessage visitorBaseMessage);
     VisitorBaseMessage findByVisitor(Visitor visitor);
+    boolean updateVisitorBaseMessage(VisitorBaseMessage visitorBaseMessage);
 }

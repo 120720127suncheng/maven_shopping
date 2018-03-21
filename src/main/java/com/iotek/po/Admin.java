@@ -12,16 +12,16 @@ public class Admin implements Serializable {
 	private Timestamp adminLoginTime;
 	private Timestamp adminCreateTime;
 	private Timestamp adminModifiedTime;
-	private Timestamp adminIsLogin;//管理员是否登录 默认值0，未登录
+	private Integer adminIsLogin;
 	public Admin() {
 
 	}
 
-	public Timestamp getAdminIsLogin() {
+	public Integer getAdminIsLogin() {
 		return adminIsLogin;
 	}
 
-	public void setAdminIsLogin(Timestamp adminIsLogin) {
+	public void setAdminIsLogin(Integer adminIsLogin) {
 		this.adminIsLogin = adminIsLogin;
 	}
 

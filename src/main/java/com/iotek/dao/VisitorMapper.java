@@ -14,4 +14,6 @@ public interface VisitorMapper {
     Visitor findVisitorPhone(String visitorPhone);
     Visitor findVisitorEmail(String visitorEmail);
     boolean afterVisitorLogin(Visitor visitor);
+    boolean updateVisitor(Visitor visitor);
+    Visitor findVisitorByVId(Visitor visitor);
 }

@@ -76,4 +76,8 @@ public class AllIndex {
     public String jumpToVisitorRegisterView(){
         return "visitor/visitorRegister";
     }
+    @RequestMapping(value = "jumpToStaffLoginView")
+    public String jumpToStaffLoginView(){
+        return "staff/login";
+    }
 }

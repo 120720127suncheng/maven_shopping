@@ -4,10 +4,13 @@
 <head>
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
-    <title>嘻嘻</title>
-    <link href="/styles/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-    <script src="/scripts/bootstrap.js/bootstrap.min.js"></script>
+    <title>欢迎</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="/styles/bootstrap.css" rel="stylesheet">
+    <link href="/styles/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="/scripts/bootstrap.min.js"></script>
     <script src="/scripts/jquery-3.0.0.js"></script>
     <script src="/scripts/elert.js"></script>
     <link href="/styles/style.css" media="screen" rel="stylesheet" type="text/css" />
@@ -26,44 +29,47 @@
 
     <nav>
         <ul class="menu">
-            <li><a href="#"><span class="iconic home"></span>个人信息</a>
-            <ul>
-                <li><a href="/visitor/viewVisitorMessage.do">查看</a></li>
-                <li><a href="">修改</a></li>
-            </ul>
+            <li><a href="/visitor/visitorViewMessage.do"><span class="glyphicon glyphicon-user"></span>个人信息</a>
             </li>
-            <li><a href="#"><span class="iconic plus-alt"></span> About</a>
+            <li><a href="#"><span class="glyphicon glyphicon-cog"></span>设置</a>
                 <ul>
-                    <li><a href="#">Company History</a></li>
-                    <li><a href="#">Meet the team</a></li>
+                    <li><a href="#">我的账号</a></li>
+                    <li><a href="#">修改密码</a></li>
+                    <li><a href="#">用户协议</a></li>
+                    <li><a href="#">反馈和帮助</a></li>
+                    <li><a href="#">退出</a></li>
                 </ul>
             </li>
-            <li><a href="#"><span class="iconic magnifying-glass"></span> Services</a>
+            <li><a href="#"><span class="glyphicon glyphicon-envelope"></span>消息</a>
                 <ul>
-                    <li><a href="#">Web Design</a></li>
-                    <li><a href="#">App Development</a></li>
-                    <li><a href="#">Email Campaigns</a></li>
-                    <li><a href="#">Copyrighting</a></li>
+                    <li><a href="#">私信</a></li>
+                    <li><a href="#">面试进程</a></li>
+                    <li><a href="#">账号修改消息</a></li>
+                    <li><a href="#">简历修改消息</a></li>
+                    <li><a href="#">简历投递消息</a></li>
+                    <li><a href="#">职位刷新通知</a></li>
                 </ul>
             </li>
-            <li><a href="#"><span class="iconic map-pin"></span> Products</a>
+            <li><a href="#"><span class="glyphicon glyphicon-zoom-in"></span>招聘信息</a>
                 <ul>
-                    <li><a href="#">Widget One</a></li>
-                    <li><a href="#">Widget Two</a></li>
-                    <li><a href="#">Web App Three</a></li>
-                    <li><a href="#">Web App Four</a></li>
-                    <li><a href="#">Crazy Products</a></li>
-                    <li><a href="#">iPhone Apps</a></li>
+                    <li><a href="#">最新职位</a></li>
+                    <li><a href="#">招聘部门</a></li>
+                    <li><a href="#">招聘职位</a></li>
                 </ul>
             </li>
-            <li><a href="#"><span class="iconic mail"></span> Contact</a>
+            <li><a href="#"><span class="glyphicon glyphicon-file"></span>简历管理</a>
                 <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Directions</a></li>
+                    <li><a href="#">简历阅览</a></li>
+                    <li><a href="#">基本简历管理</a></li>
+                    <li><a href="#">附件管理</a></li>
                 </ul>
             </li>
-            <li><a href="#"><span class="iconic mail"></span> ${sessionScope.visitor.visitorBaseMessage.visitorName}</a>
-
+            <li><a href="#"><span class="glyphicon glyphicon-asterisk"></span>求职状态</a>
+                <ul>
+                    <li><a href="#">目前状态</a></li>
+                    <li><a href="#">求职意向</a></li>
+                    <li><a href="#">关注职位</a></li>
+                </ul>
             </li>
         </ul>
         <div class="clearfix"></div>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iotek.dao.PositionMapper">
+<resultMap id="positionMap" type="Position">
+    <id column="id" property="id"></id>
+    <result column="department_id" property="departmentId"></result>
+    <result column="position_name" property="positionName"></result>
+    <result column="position_is_deleted" property="positionIsDeleted"></result>
+    <result column="position_create_time" property="positionCreateTime"></result>
+    <result column="position_modified_time" property="positionModifiedTime"></result>
+    <collection ofType="Staff" property="staff" column="{id=id}"  select="com.iotek.dao.StaffMapper.findStaffByPosition"></collection>
+</resultMap>
+    <select id="findPositionByDepartment" parameterType="Department" resultMap="positionMap">
+        SELECT * FROM POSITION WHERE DEPARTMENT_ID=#{id} AND POSITION_IS_DELETED=0
+    </select>
+    <sql id="createId">
+        SELECT POSITION_ID.nextval FROM dual
+    </sql>
+    <sql id="findPosition">
+        SELECT * FROM POSITION
+    </sql>
+    <insert id="addPosition" parameterType="Position">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            <include refid="createId"></include>
+        </selectKey>
+        INSERT INTO POSITION
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">
+                id,
+            </if>
+            <if test="departmentId!=null">
+                department_id,
+            </if>
+            <if test="positionName!=null">
+                position_name,
+            </if>
+            <if test="positionIsDeleted!=null">
+                position_is_deleted,
+            </if>
+            <if test="positionCreateTime!=null">
+                position_create_time,
+            </if>
+            <if test="positionModifiedTime!=null">
+                position_modified_time,
+            </if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">
+                #{id},
+            </if>
+            <if test="departmentId!=null">
+                #{departmentId},
+            </if>
+            <if test="positionName!=null">
+                #{positionName},
+            </if>
+            <if test="positionIsDeleted!=null">
+                #{positionIsDeleted},
+            </if>
+            <if test="positionCreateTime!=null">
+                #{positionCreateTime},
+            </if>
+            <if test="positionModifiedTime!=null">
+                #{positionModifiedTime},
+            </if>
+        </trim>
+    </insert>
+    <select id="findPositionByName" parameterType="Position" resultMap="positionMap">
+        <include refid="findPosition"></include>
+        WHERE position_name=#{positionName} AND position_is_deleted=0
+    </select>
+    <update id="updatePosition" parameterType="Position">
+        UPDATE POSITION
+        <set>
+            <if test="departmentId!=null">department_id=#{departmentId},</if>
+            <if test="positionName!=null">position_name=#{positionName},</if>
+            <if test="positionIsDeleted !=null">position_is_deleted=#{positionIsDeleted},</if>
+            <if test="positionCreateTime !=null">position_create_time=#{positionCreateTime},</if>
+            <if test="positionModifiedTime !=null">position_modified_time=#{positionModifiedTime},</if>
+
+        </set>
+        <include refid="checkId"></include>
+    </update>
+    <sql id="checkId">
+        <where>
+            <choose>
+                <when test="id !=null">
+                    AND id=#{id}
+                </when>
+                <otherwise>
+                    AND 1=2
+                </otherwise>
+            </choose>
+        </where>
+    </sql>
+    <select id="findPositionByNameAndDId" parameterType="Position" resultMap="positionMap">
+        <include refid="findPosition"></include>
+        WHERE position_name=#{positionName} AND department_id=#{departmentId}
+    </select>
+</mapper>

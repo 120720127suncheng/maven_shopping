@@ -3,20 +3,29 @@ package com.iotek.po;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.List;
 
 public class Department implements Serializable {
 
 	private Integer id;
 	private String departmentName;
-	private String departmentLocation;//²¿ÃÅµØÖ·
+	private String departmentLocation;//ï¿½ï¿½ï¿½Åµï¿½Ö·
 	private Integer departmentIsDeleted;
 	private Timestamp departmentCreateTime;
 	private Timestamp departmentModifiedTime;
-	private BigDecimal departmentBudget;//²¿ÃÅÒ»ÄêµÄÔ¤Ëã
-	private BigDecimal departmentActualExpense;//²¿ÃÅ½ñÄêÊµ¼ÊµÄÏû·Ñ
-
+	private BigDecimal departmentBudget;//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½
+	private BigDecimal departmentActualExpense;//ï¿½ï¿½ï¿½Å½ï¿½ï¿½ï¿½Êµï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½
+	private List<Position> position;
 	public Department() {
 
+	}
+
+	public List<Position> getPosition() {
+		return position;
+	}
+
+	public void setPosition(List<Position> position) {
+		this.position = position;
 	}
 
 	public Integer getId() {
@@ -87,13 +96,14 @@ public class Department implements Serializable {
 	public String toString() {
 		return "Department{" +
 				"id=" + id +
-				"departmentName=" + departmentName +
-				"departmentLocation=" + departmentLocation +
-				"departmentIsDeleted=" + departmentIsDeleted +
-				"departmentCreateTime=" + departmentCreateTime +
-				"departmentModifiedTime=" + departmentModifiedTime +
-				"departmentBudget=" + departmentBudget +
-				"departmentActualExpense=" + departmentActualExpense +
-				"}";
+				", departmentName='" + departmentName + '\'' +
+				", departmentLocation='" + departmentLocation + '\'' +
+				", departmentIsDeleted=" + departmentIsDeleted +
+				", departmentCreateTime=" + departmentCreateTime +
+				", departmentModifiedTime=" + departmentModifiedTime +
+				", departmentBudget=" + departmentBudget +
+				", departmentActualExpense=" + departmentActualExpense +
+				", position=" + position +
+				'}';
 	}
 }

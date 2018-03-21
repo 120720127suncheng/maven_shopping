@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iotek.dao.AdvertiseForMapper">
+    <resultMap id="advertiseForMap" type="AdvertiseFor">
+        <id column="id" property="id"></id>
+        <result column="position_id" property="positionId"></result>
+        <result column="location" property="location"></result>
+        <result column="salary" property="salary"></result>
+        <result column="position_describe" property="positionDescribe"></result>
+        <result column="position_ability" property="positionAbility"></result>
+        <result column="staff_id" property="staffId"></result>
+        <result column="advertise_modified_time" property="advertiseModifiedTime"></result>
+        <result column="advertise_create_time" property="advertiseCreateTime"></result>
+        <result column="advertise_is_deleted" property="advertiseIsDeleted"></result>
+    </resultMap>
+    <sql id="findAdvertiseFor">
+        SELECT * FROM ADVERTISE_FOR
+    </sql>
+    <sql id="createId">
+        SELECT ADVERTISE_FOR_ID.nextval FROM dual
+    </sql>
+    <insert id="addAdvertiseFor" parameterType="AdvertiseFor">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            <include refid="createId"></include>
+        </selectKey>
+        INSERT INTO ADVERTISE_FOR
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">
+                id,
+            </if>
+            <if test="positionId!=null">
+                position_id,
+            </if>
+            <if test="location!=null">
+                location,
+            </if>
+            <if test="salary!=null">
+                salary,
+            </if>
+            <if test="positionDescribe!=null">
+                position_describe,
+            </if>
+            <if test="positionAbility!=null">
+                position_ability,
+            </if>
+            <if test="staffId!=null">
+                staff_id,
+            </if>
+            <if test="advertiseModifiedTime!=null">
+                advertise_modified_time,
+            </if>
+            <if test="advertiseCreateTime!=null">
+                advertise_create_time,
+            </if>
+            <if test="advertiseIsDeleted!=null">
+                advertise_is_deleted,
+            </if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">
+                #{id},
+            </if>
+            <if test="positionId!=null">
+                #{positionId},
+            </if>
+            <if test="location!=null">
+                #{location},
+            </if>
+            <if test="salary!=null">
+                #{salary},
+            </if>
+            <if test="positionDescribe!=null">
+                #{positionDescribe},
+            </if>
+            <if test="positionAbility!=null">
+                #{positionAbility},
+            </if>
+            <if test="staffId!=null">
+                #{staffId},
+            </if>
+            <if test="advertiseModifiedTime!=null">
+                #{advertiseModifiedTime},
+            </if>
+            <if test="advertiseCreateTime!=null">
+                #{advertiseCreateTime},
+            </if>
+            <if test="advertiseIsDeleted!=null">
+                #{advertiseIsDeleted},
+            </if>
+        </trim>
+    </insert>
+    <select id="findAdvertiseForById" parameterType="AdvertiseFor" resultMap="advertiseForMap">
+        <include refid="findAdvertiseFor"></include>
+        WHERE id=#{id} AND advertise_is_deleted=0
+    </select>
+    <update id="updateAdvertiseFor" parameterType="AdvertiseFor">
+        UPDATE ADVERTISE_FOR
+        <set>
+            <if test="positionId!=null">position_id=#{positionId},</if>
+            <if test="location!=null">location=#{location},</if>
+            <if test="salary !=null">salary=#{salary},</if>
+            <if test="positionDescribe !=null">position_describe=#{positionDescribe},</if>
+            <if test="positionAbility !=null">position_ability=#{positionAbility},</if>
+            <if test="staffId !=null">staff_id=#{staffId},</if>
+            <if test="advertiseModifiedTime!=null">advertise_modified_time=#{advertiseModifiedTime},</if>
+            <if test="advertiseCreateTime!=null">advertise_create_time=#{advertiseCreateTime},</if>
+            <if test="advertiseIsDeleted!=null">advertise_is_deleted=#{advertiseIsDeleted},</if>
+        </set>
+        <include refid="checkId"></include>
+    </update>
+    <sql id="checkId">
+        <where>
+            <choose>
+                <when test="id !=null">
+                    AND id=#{id}
+                </when>
+                <otherwise>
+                    AND 1=2
+                </otherwise>
+            </choose>
+        </where>
+    </sql>
+</mapper>

@@ -1,8 +1,11 @@
 package com.iotek.service.impl;
 
+import com.iotek.dao.VisitorBaseMessageMapper;
 import com.iotek.dao.VisitorMapper;
 import com.iotek.po.Visitor;
+import com.iotek.po.VisitorBaseMessage;
 import com.iotek.service.VisitorService;
+import com.iotek.util.Validate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +21,14 @@ import org.springframework.transaction.annotation.Transactional;
 public class VisitorServiceImpl implements VisitorService {
     @Autowired
     private VisitorMapper visitorMapper;
+    @Autowired
+    private VisitorBaseMessageMapper visitorBaseMessageMapper;
+
+    @Override
+    public Visitor findVisitorByVId(Visitor visitor) {
+        return visitorMapper.findVisitorByVId(visitor);
+    }
+
     public boolean addVisitor(Visitor visitor) {
         return visitorMapper.addVisitor(visitor);
     }
@@ -39,5 +50,17 @@ public class VisitorServiceImpl implements VisitorService {
     @Override
     public boolean afterVisitorLogin(Visitor visitor) {
         return visitorMapper.afterVisitorLogin(visitor);
+    }
+    @Override
+    public boolean updateVisitorMessage(Visitor visitor,VisitorBaseMessage visitorBaseMessage) {
+        if(visitor==null){
+            Validate.throwNull("游客为空!");
+        }
+        //若该游客有账户信息却无基本信息，则增加基本信息
+        if(visitorMapper.updateVisitor(visitor)&&visitorBaseMessageMapper.updateVisitorBaseMessage(visitorBaseMessage)){
+            return true;
+        }
+
+        return false;
     }
 }

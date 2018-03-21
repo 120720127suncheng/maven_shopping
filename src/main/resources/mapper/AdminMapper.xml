@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iotek.dao.AdminMapper">
+<resultMap id="adminMap" type="Admin">
+    <id column="id" property="id"></id>
+    <result column="admin_name" property="adminName"></result>
+    <result column="admin_password" property="adminPassword"></result>
+    <result column="admin_is_deleted" property="adminIsDeleted"></result>
+    <result column="admin_login_time" property="adminLoginTime"></result>
+    <result column="admin_create_time" property="adminCreateTime"></result>
+    <result column="amdin_modified_time" property="adminModifiedTime"></result>
+    <result column="admin_is_login" property="adminIsLogin"></result>
+</resultMap>
+    <sql id="createId">
+        SELECT ADMIN_ID.nextval FROM dual
+    </sql>
+    <sql id="findAdmin">
+        SELECT * FROM ADMIN
+    </sql>
+    <insert id="addAdmin" parameterType="Admin">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            <include refid="createId"></include>
+        </selectKey>
+        INSERT INTO ADMIN
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">
+                id,
+            </if>
+            <if test="adminName!=null">
+                admin_name,
+            </if>
+            <if test="adminPassword!=null">
+                admin_password,
+            </if>
+            <if test="adminIsDeleted!=null">
+                admin_is_deleted,
+            </if>
+            <if test="adminLoginTime!=null">
+                admin_login_time,
+            </if>
+            <if test="adminCreateTime!=null">
+                admin_create_time,
+            </if>
+            <if test="adminModifiedTime!=null">
+                admin_modified_time,
+            </if>
+            <if test="adminIsLogin!=null">
+                admin_is_login,
+            </if>
+
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">
+                #{id},
+            </if>
+            <if test="adminName!=null">
+                #{adminName},
+            </if>
+            <if test="adminPassword!=null">
+                #{adminPassword},
+            </if>
+            <if test="adminIsDeleted!=null">
+                #{adminIsDeleted},
+            </if>
+            <if test="adminLoginTime!=null">
+                #{adminLoginTime},
+            </if>
+            <if test="adminCreateTime!=null">
+                #{adminCreateTime},
+            </if>
+            <if test="adminModifiedTime!=null">
+                #{adminModifiedTime},
+            </if>
+            <if test="adminIsLogin!=null">
+                #{adminIsLogin},
+            </if>
+        </trim>
+    </insert>
+    <select id="findAdminByPassword" parameterType="Admin" resultMap="adminMap">
+        <include refid="findAdmin"></include>
+        WHERE admin_password=#{adminPassword} AND admin_is_deleted=0 AND admin_is_login=0
+        AND admin_name=#{adminName}
+    </select>
+    <update id="updateAdmin" parameterType="Admin">
+        UPDATE ADMIN
+        <set>
+            <if test="adminName!=null">admin_name=#{adminName},</if>
+            <if test="adminPassword !=null">admin_password=#{adminPassword},</if>
+            <if test="adminIsDeleted !=null">admin_is_deleted=#{adminIsDeleted},</if>
+            <if test="adminLoginTime !=null">admin_login_time=#{adminLoginTime},</if>
+            <if test="adminCreateTime !=null">admin_create_time=#{adminCreateTime},</if>
+            <if test="adminModifiedTime !=null">admin_modified_time=#{adminModifiedTime},</if>
+            <if test="adminIsLogin !=null">admin_is_login=#{adminIsLogin},</if>
+        </set>
+        <include refid="checkId"></include>
+    </update>
+    <sql id="checkId">
+        <where>
+            <choose>
+                <when test="id !=null">
+                    AND id=#{id}
+                </when>
+                <otherwise>
+                    AND 1=2
+                </otherwise>
+            </choose>
+        </where>
+    </sql>
+    <select id="findAdminByAId" parameterType="Admin" resultMap="adminMap">
+        <include refid="findAdmin"></include>
+        WHERE id=#{id}
+    </select>
+</mapper>

@@ -104,14 +104,15 @@ public class Visitor implements Serializable {
 	public String toString() {
 		return "Visitor{" +
 				"id=" + id +
-				"visitorPassword=" + visitorPassword +
-				"visitorPhone=" + visitorPhone +
-				"visitorEmail=" + visitorEmail +
-				"visitorLoginTime=" + visitorLoginTime +
-				"visitorCreateTime=" + visitorCreateTime +
-				"visitorModifiedTime=" + visitorModifiedTime +
-				"visitorIsOn=" + visitorIsOn +
-				"visitorIsNormal=" + visitorIsNormal +
-				"}";
+				", visitorPassword='" + visitorPassword + '\'' +
+				", visitorPhone='" + visitorPhone + '\'' +
+				", visitorEmail='" + visitorEmail + '\'' +
+				", visitorLoginTime=" + visitorLoginTime +
+				", visitorCreateTime=" + visitorCreateTime +
+				", visitorModifiedTime=" + visitorModifiedTime +
+				", visitorIsOn=" + visitorIsOn +
+				", visitorIsNormal=" + visitorIsNormal +
+				", visitorBaseMessage=" + visitorBaseMessage +
+				'}';
 	}
 }
