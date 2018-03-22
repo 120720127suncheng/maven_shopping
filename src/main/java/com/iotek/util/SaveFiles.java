@@ -14,7 +14,7 @@ import java.io.FileOutputStream;
  */
 public class SaveFiles {
     public static String saveFile(MultipartFile filedata, HttpServletRequest request) {
-        // 根据配置文件获取服务器图片存放路径
+        // 根据配置文件获取服务器图片存放路径,request一开始想获得配置的路径，后来没用到，忘记改了
         String newFileName = String.valueOf(System.currentTimeMillis());
         String saveFilePath = "D:/images";
         /* 构建文件目录 */
@@ -34,7 +34,8 @@ public class SaveFiles {
             out.write(filedata.getBytes());
             out.flush();
             out.close();
-            return "D:/images/"+newFileName + "." + extensionName;
+            /*返回存储的位置,看你自己想存哪*/
+            return imgPath;
         } catch (Exception e) {
             e.printStackTrace();
         }

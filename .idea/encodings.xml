@@ -4,6 +4,9 @@
     <file url="file://$PROJECT_DIR$/src/main/java/com/iotek/controller/VisitorBaseMessageController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/iotek/controller/VisitorController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/iotek/dao/VisitorBaseMessageMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/iotek/po/AdminNews.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/iotek/po/StaffNews.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/iotek/po/VisitorNews.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/iotek/service/VisitorBaseMessageService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/iotek/service/impl/VisitorBaseMessageServiceImpl.java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />

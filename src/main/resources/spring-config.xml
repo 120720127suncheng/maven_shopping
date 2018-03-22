@@ -84,6 +84,7 @@
     <mvc:resources mapping="/stafffont/**" location="/stafffont/"></mvc:resources>
     <mvc:resources mapping="/input/**" location="/input/"></mvc:resources>
     <mvc:resources mapping="/tishikuang/**" location="/tishikuang/"></mvc:resources>
+    <mvc:resources mapping="/ziLiao/**" location="/ziLiao/"></mvc:resources>
     <!--拦截器-->
     <!--<mvc:interceptors>
         <mvc:interceptor>

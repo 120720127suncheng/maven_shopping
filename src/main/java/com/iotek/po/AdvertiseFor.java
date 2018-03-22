@@ -15,9 +15,18 @@ public class AdvertiseFor implements Serializable {
 	private Timestamp advertiseModifiedTime;
 	private Timestamp advertiseCreateTime;
 	private Integer advertiseIsDeleted;
+	private Integer advertiseForPerson;
 
 	public AdvertiseFor() {
 
+	}
+
+	public Integer getAdvertiseForPerson() {
+		return advertiseForPerson;
+	}
+
+	public void setAdvertiseForPerson(Integer advertiseForPerson) {
+		this.advertiseForPerson = advertiseForPerson;
 	}
 
 	public Integer getStaffId() {
@@ -113,6 +122,7 @@ public class AdvertiseFor implements Serializable {
 				", advertiseModifiedTime=" + advertiseModifiedTime +
 				", advertiseCreateTime=" + advertiseCreateTime +
 				", advertiseIsDeleted=" + advertiseIsDeleted +
+				", advertiseForPerson=" + advertiseForPerson +
 				'}';
 	}
 }

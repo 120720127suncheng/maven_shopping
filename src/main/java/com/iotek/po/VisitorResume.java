@@ -7,15 +7,15 @@ public class VisitorResume implements Serializable {
 
 	private Integer id;
 	private Integer visitorId;
-	private String visitorJobObjective;//ÓÎ¿ÍµÄÒâÏòÖ°Î»
-	private String visitorResumeName;//¼òÀúÃû³Æ
+	private String visitorJobObjective;//ï¿½Î¿Íµï¿½ï¿½ï¿½ï¿½ï¿½Ö°Î»
+	private String visitorResumeName;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	private String visitorSpeciality;//×¨Òµ
-	private String visitorEducationBackground;//½ÌÓý±³¾°
-	private String vistorEducationDescription;//½ÌÓý¾­Àú
-	private Integer visitorWorkingYears;//¹¤×÷ÄêÏÞ
-	private String visitorWorkingDescription;//¹¤×÷¾­Àú
-	private Integer visitorExpectedSalary;//ÆÚÍûÐ½×Ê
-	private String visitorResumeAttachment;//¼òÀú¸½¼þ
+	private String visitorEducationBackground;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private String vistorEducationDescription;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private Integer visitorWorkingYears;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private String visitorWorkingDescription;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private Integer visitorExpectedSalary;//ï¿½ï¿½ï¿½ï¿½Ð½ï¿½ï¿½
+	private String visitorResumeAttachment;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	private Integer visitorResumeIsDeleted;
 	private Timestamp visitorResumeCreateTime;
 	private Timestamp visitorResumeModifiedTime;
@@ -138,7 +138,7 @@ public class VisitorResume implements Serializable {
 
 	@Override
 	public String toString() {
-		return "VisitorResume{" +
+		return "VisitorResumeMapper{" +
 				"id=" + id +
 				"visitorId=" + visitorId +
 				"visitorJobObjective=" + visitorJobObjective +

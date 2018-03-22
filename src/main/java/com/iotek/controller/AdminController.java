@@ -55,7 +55,6 @@ public class AdminController {
     @RequestMapping(value = "jumpToAddDepartView")
     public String jumpToAddDepart(Model model){
         List<Department> departmentList=departmentService.findExistDepartment();
-        System.err.println(2+"~"+departmentList);
         if(departmentList.size()==0||departmentList==null){
             model.addAttribute("departmentList","暂无任何部门!");
             return "admin/addDepartment";
@@ -80,5 +79,16 @@ public class AdminController {
         }
         model.addAttribute("info","添加失败");
         return "admin/addDepartment";
+    }
+    @RequestMapping(value = "jumpToAddStaffView")
+    public String jumpToAddStaffView(Model model){
+        List<Department> departmentList=departmentService.findExistDepartment();
+        if(departmentList==null||departmentList.size()==0){
+            model.addAttribute("departmentList","暂无任何部门!");
+            return  "admin/addStaff";
+        }else {
+            model.addAttribute("departmentList",departmentList);
+            return  "admin/addStaff";
+        }
     }
 }

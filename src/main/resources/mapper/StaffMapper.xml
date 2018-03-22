@@ -59,22 +59,22 @@
             <if test="staffIsLeft!=null">
                 staff_is_left,
             </if>
-            <if test="staffBaseSalary">
+            <if test="staffBaseSalary!=null">
                 staff_base_salary,
             </if>
-            <if test="staffType">
+            <if test="staffType!=null">
                 staff_type,
             </if>
-            <if test="staffModifiedTime">
+            <if test="staffModifiedTime!=null">
                 staff_modified_time,
             </if>
-            <if test="staffLoginTime">
+            <if test="staffLoginTime!=null">
                 staff_login_time,
             </if>
-            <if test="staffIsLogin">
+            <if test="staffIsLogin!=null">
                 staff_is_login,
             </if>
-            <if test="staffPassword">
+            <if test="staffPassword!=null">
                 staff_password,
             </if>
         </trim>
@@ -106,22 +106,22 @@
             <if test="staffIsLeft!=null">
                 #{staffIsLeft},
             </if>
-            <if test="staffBaseSalary">
+            <if test="staffBaseSalary!=null">
                 #{staffBaseSalary},
             </if>
-            <if test="staffType">
+            <if test="staffType!=null">
                 #{staffType},
             </if>
-            <if test="staffModifiedTime">
+            <if test="staffModifiedTime!=null">
                 #{staffModifiedTime},
             </if>
-            <if test="staffLoginTime">
+            <if test="staffLoginTime!=null">
                 #{staffLoginTime},
             </if>
-            <if test="staffIsLogin">
+            <if test="staffIsLogin!=null">
                 #{staffIsLogin},
             </if>
-            <if test="staffPassword">
+            <if test="staffPassword!=null">
                 #{staffPassword},
             </if>
         </trim>
@@ -170,5 +170,13 @@
     <select id="findStaffByPosition" parameterType="Position" resultMap="staffMap">
         <include refid="findStaff"></include>
         WHERE position_id=#{id} AND staff_is_left=0
+    </select>
+    <select id="findStaffByPhone" parameterType="Staff" resultMap="staffMap">
+        <include refid="findStaff"></include>
+        WHERE staff_phone=#{staffPhone}
+    </select>
+    <select id="findStaffByEmail" parameterType="Staff" resultMap="staffMap">
+        <include refid="findStaff"></include>
+        WHERE staff_email=#{staffEmail}
     </select>
 </mapper>

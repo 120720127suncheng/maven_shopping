@@ -144,6 +144,7 @@ public class VisitorController {
         visitor.setId(visitor1.getId());
         visitor.setVisitorModifiedTime(TimeUtil.getTimestamp());
         visitorBaseMessage.setVisitorId(visitor1.getId());
+
         String baseFile=SaveFiles.saveFile(file,request);/*存储图片*/
 
         visitorBaseMessage.setPhoto(baseFile);

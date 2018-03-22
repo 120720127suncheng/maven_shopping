@@ -45,4 +45,14 @@ public class StaffServiceImpl implements StaffService {
     public Staff findStaffBySId(Staff staff) {
         return staffMapper.findStaffBySId(staff);
     }
+
+    @Override
+    public Staff findStaffByPhone(Staff staff) {
+        return staffMapper.findStaffByPhone(staff);
+    }
+
+    @Override
+    public Staff findStaffByEmail(Staff staff) {
+        return staffMapper.findStaffByEmail(staff);
+    }
 }

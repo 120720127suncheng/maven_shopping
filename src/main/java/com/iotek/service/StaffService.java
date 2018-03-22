@@ -15,4 +15,6 @@ public interface StaffService {
     boolean updateStaff(Staff staff);
     boolean updateStaffAfterLogin(Staff staff);
     Staff findStaffBySId(Staff staff);
+    Staff findStaffByPhone(Staff staff);
+    Staff findStaffByEmail(Staff staff);
 }

@@ -53,10 +53,16 @@
             }
         }
             function submitAdvertiseFor() {
+                var num_reg=/^[0-9]*$/;
                 if($("#departmentName").val()==""){
                     zeroModal.alert("请选择部门!");
                 }else if($("#positionName").val()==""){
                     zeroModal.alert("请填写职位!");
+                }else if($("#location").val()==""||$("#positionDescribe").val()==""||$("#positionAbility").val()==""
+                    ||$("#salary").val()==""||$("#advertiseForPerson").val()==""){
+                    zeroModal.alert("请将招聘信息填写完整!");
+                }else if(!num_reg.test($("#advertiseForPerson").val())||$("#advertiseForPerson").val()<=0){
+                        zeroModal.alert("请输入正确的人数!");
                 }else {
                     $.ajax({
                         type: "post",
@@ -66,7 +72,8 @@
                                "location":$("input[name='location']").val(),
                                "positionDescribe":$("textarea[name='positionDescribe']").val(),
                                "positionAbility":$("textarea[name='positionAbility']").val(),
-                               "salary":$("#salary").val()},
+                               "salary":$("#salary").val(),
+                                "advertiseForPerson":$("#advertiseForPerson").val()},
                         success: function (msg) {
                             if(msg.trim()=="false"){
                                 zeroModal.alert('发布失败!');
@@ -109,6 +116,7 @@
                             <option value="9000--11000">9000--11000</option>
                             <option value="再高没有了">再高没有了!</option>
                         </select>
+                招聘人数:<input type="number" id="advertiseForPerson" name="advertiseForPerson">
                 <button onclick="submitAdvertiseFor()">提交</button>
             </div>
         </c:otherwise>

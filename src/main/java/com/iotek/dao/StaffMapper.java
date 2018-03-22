@@ -17,4 +17,6 @@ public interface StaffMapper {
     boolean updateStaff(Staff staff);
     Staff findStaffBySId(Staff staff);
     List<Staff> findStaffByPosition(Position position);
+    Staff findStaffByPhone(Staff staff);
+    Staff findStaffByEmail(Staff staff);
 }

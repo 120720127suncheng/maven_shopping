@@ -14,6 +14,7 @@
         <result column="advertise_modified_time" property="advertiseModifiedTime"></result>
         <result column="advertise_create_time" property="advertiseCreateTime"></result>
         <result column="advertise_is_deleted" property="advertiseIsDeleted"></result>
+        <result column="advertise_for_person" property="advertiseForPerson"></result>
     </resultMap>
     <sql id="findAdvertiseFor">
         SELECT * FROM ADVERTISE_FOR
@@ -57,6 +58,9 @@
             <if test="advertiseIsDeleted!=null">
                 advertise_is_deleted,
             </if>
+            <if test="advertiseForPerson!=null">
+                advertise_for_person,
+            </if>
         </trim>
         <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
             <if test="id!=null">
@@ -88,6 +92,9 @@
             </if>
             <if test="advertiseIsDeleted!=null">
                 #{advertiseIsDeleted},
+            </if>
+            <if test="advertiseForPerson!=null">
+                #{advertiseForPerson},
             </if>
         </trim>
     </insert>
